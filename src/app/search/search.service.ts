@@ -12,8 +12,8 @@ export class SearchService {
 
   private apiUrl = environment.baseUrl;
   private accessId = environment.userAccessId;
-  // private queryUrl = `/search/photos?client_id=${this.accessId}&page=1&query=`;
-  private queryUrl = `/search/users?client_id=${this.accessId}&page=1&query=`;
+  private queryUrl = `/search/photos?client_id=${this.accessId}&page=1&query=`;
+  // private queryUrl = `/search/users?client_id=${this.accessId}&page=1&query=`;
   constructor(private http: HttpClient) { }
 
   search(terms: Observable<String>) {

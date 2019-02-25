@@ -35,10 +35,10 @@
     </div>
   </div>
 
-  <div id="mydiv" *ngFor="let photo of photos | slice:0:9" class="col-sm-3 col-md-3 col-lg-3 col-xs-12">
+  <div id="mydiv" *ngFor="let photo of photos" class="col-sm-4 col-md-4 col-lg-4 col-xs-12">
     <img [src]="photo.urls.regular" alt="Avatar" class="image">
     <div class="overlay">
-      <div><span class="glyphicon glyphicon-heart"></span>100</div>
+      <div><span class="glyphicon glyphicon-heart"></span>{{ photo.likes }}</div>
     </div>
   </div>
 
