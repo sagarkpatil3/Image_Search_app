@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Mutterfly</a>
+    </div>
+    
+    <div class="navbar-form navbar-left" >
+      <div class="form-group">
+            <input (keyup)="searchTerm.next($event.target.value)" class="form-control" placeholder="Search">
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+<router-outlet></router-outlet>
+
+
