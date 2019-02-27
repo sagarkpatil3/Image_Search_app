@@ -1,9 +1,11 @@
-<div class="container">
-  <div id="mydiv" *ngFor="let result of result | slice:0:9" class="col-sm-4 col-md-4 col-lg-4 col-xs-12">
+<div class="container" *ngFor="let grup of result" infiniteScroll [infiniteScrollDistance]="12"
+[infiniteScrollUpDistance]="15" [infiniteScrollThrottle]="5000" (scrolled)="onScroll()" (scrolledUp)="onScrollUp()"
+  (scrolled)="onScroll()">
+  <div id="mydiv" *ngFor="let result of grup | slice:0:9" class="col-sm-4 col-md-4 col-lg-4 col-xs-12">
     <img [src]="result.urls.regular" alt="Avatar" class="image">
     <div class="overlay">
       <div (click)="userInfo(result.user.username)" style="cursor: pointer;">{{ result.user.username }}</div>
-<div><span class="glyphicon glyphicon-heart"></span> {{ result.likes }}</div>
+      <div><span class="glyphicon glyphicon-heart"></span> {{ result.likes }}</div>
     </div>
   </div>
 </div>

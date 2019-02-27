@@ -41,6 +41,12 @@
   opacity: 0.9;
 }
 
+.searchbutton {
+  height: 32px;
+  width: 32px;
+  margin: 1px;
+}
+
 .container {
     background-color: white;
 }

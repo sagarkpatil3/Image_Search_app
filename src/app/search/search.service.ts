@@ -16,13 +16,13 @@ export class SearchService {
   // private queryUrl = `/search/users?client_id=${this.accessId}&page=1&query=`;
   constructor(private http: HttpClient) { }
 
-  search(terms: Observable<String>) {
-    return terms.pipe(debounceTime(400)
-    , distinctUntilChanged()
-    , switchMap(term => this.searchEntries(term)));
-  }
+  // search(terms: Observable<String>) {
+  //   return terms.pipe(debounceTime(400)
+  //   , distinctUntilChanged()
+  //   , switchMap(term => this.searchEntries(term)));
+  // }
 
-  searchEntries(term) {
-    return this.http.get(this.apiUrl + this.queryUrl + term ).pipe(map(res => res));
+  search(term, pageNumber) {
+    return this.http.get(`${this.apiUrl}/search/photos?client_id=${this.accessId}&page=${pageNumber}&query=${term}`).pipe(map(res => res));
   }
 }
